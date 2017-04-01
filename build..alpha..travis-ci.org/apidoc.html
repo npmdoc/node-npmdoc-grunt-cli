@@ -1,0 +1,317 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/gruntjs/grunt-cli#readme"
+
+    >grunt-cli (v1.2.0)</a>
+</h1>
+<h4>The grunt command line interface</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-cli">module grunt-cli</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grunt-cli.</span>completion</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grunt-cli.</span>info</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-cli.completion">module grunt-cli.completion</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-cli.completion.print">
+            function <span class="apidocSignatureSpan">grunt-cli.completion.</span>print
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-cli.info">module grunt-cli.info</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-cli.info.fatal">
+            function <span class="apidocSignatureSpan">grunt-cli.info.</span>fatal
+            <span class="apidocSignatureSpan">(msg, code)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-cli.info.help">
+            function <span class="apidocSignatureSpan">grunt-cli.info.</span>help
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-cli.info.helpFooter">
+            function <span class="apidocSignatureSpan">grunt-cli.info.</span>helpFooter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-cli.info.helpHeader">
+            function <span class="apidocSignatureSpan">grunt-cli.info.</span>helpHeader
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-cli.info.version">
+            function <span class="apidocSignatureSpan">grunt-cli.info.</span>version
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-cli" id="apidoc.module.grunt-cli">module grunt-cli</a></h1>
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-cli.completion" id="apidoc.module.grunt-cli.completion">module grunt-cli.completion</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-cli.completion.print" id="apidoc.element.grunt-cli.completion.print">
+        function <span class="apidocSignatureSpan">grunt-cli.completion.</span>print
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">print = function (name) {
+  var code = 0;
+  var filepath = path.join(__dirname, &#x27;../completion&#x27;, name);
+  var output;
+  try {
+    // Attempt to read shell completion file.
+    output = String(fs.readFileSync(filepath));
+  } catch (err) {
+    code = 5;
+    output = &#x27;echo &#x22;Specified grunt shell auto-completion rules &#x27;;
+    if (name &#x26;&#x26; name !== &#x27;true&#x27;) {
+      output += &#x27;for \&#x27;&#x27; + name + &#x27;\&#x27; &#x27;;
+    }
+    output += &#x27;not found.&#x22;&#x27;;
+  }
+
+  console.log(output);
+  process.exit(code);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-cli.info" id="apidoc.module.grunt-cli.info">module grunt-cli.info</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-cli.info.fatal" id="apidoc.element.grunt-cli.info.fatal">
+        function <span class="apidocSignatureSpan">grunt-cli.info.</span>fatal
+        <span class="apidocSignatureSpan">(msg, code)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fatal = function (msg, code) {
+  exports.helpHeader();
+  console.log(&#x27;Fatal error: &#x27; + msg);
+  console.log(&#x27;&#x27;);
+  exports.helpFooter();
+  process.exit(code);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-cli.info.help" id="apidoc.element.grunt-cli.info.help">
+        function <span class="apidocSignatureSpan">grunt-cli.info.</span>help
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">help = function () {
+  exports.helpHeader();
+  exports.helpFooter();
+  process.exit();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-cli.info.helpFooter" id="apidoc.element.grunt-cli.info.helpFooter">
+        function <span class="apidocSignatureSpan">grunt-cli.info.</span>helpFooter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">helpFooter = function () {
+  [
+    &#x27;If you\&#x27;re seeing this message, grunt hasn\&#x27;t been installed locally to&#x27;,
+    &#x27;your project. For more information about installing and configuring grunt,&#x27;,
+    &#x27;please see the Getting Started guide:&#x27;,
+    &#x27;&#x27;,
+    &#x27;http://gruntjs.com/getting-started&#x27;,
+  ].forEach(function(str) { console.log(str); });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+// Show help, then exit with a message and error code.
+exports.fatal = function(msg, code) {
+exports.helpHeader();
+console.log(&#x27;Fatal error: &#x27; + msg);
+console.log(&#x27;&#x27;);
+exports.<span class="apidocCodeKeywordSpan">helpFooter</span>();
+process.exit(code);
+};
+
+// Show help and exit.
+exports.help = function() {
+exports.helpHeader();
+exports.helpFooter();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-cli.info.helpHeader" id="apidoc.element.grunt-cli.info.helpHeader">
+        function <span class="apidocSignatureSpan">grunt-cli.info.</span>helpHeader
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">helpHeader = function () {
+  console.log(&#x27;grunt-cli: &#x27; + pkg.description + &#x27; (v&#x27; + pkg.version + &#x27;)&#x27;);
+  console.log(&#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Display grunt-cli version.
+exports.version = function() {
+  console.log(&#x27;grunt-cli v&#x27; + pkg.version);
+};
+
+// Show help, then exit with a message and error code.
+exports.fatal = function(msg, code) {
+  exports.<span class="apidocCodeKeywordSpan">helpHeader</span>();
+  console.log(&#x27;Fatal error: &#x27; + msg);
+  console.log(&#x27;&#x27;);
+  exports.helpFooter();
+  process.exit(code);
+};
+
+// Show help and exit.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-cli.info.version" id="apidoc.element.grunt-cli.info.version">
+        function <span class="apidocSignatureSpan">grunt-cli.info.</span>version
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">version = function () {
+  console.log(&#x27;grunt-cli v&#x27; + pkg.version);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>

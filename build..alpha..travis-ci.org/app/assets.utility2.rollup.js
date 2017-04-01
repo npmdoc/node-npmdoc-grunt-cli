@@ -698,6 +698,7 @@ local.templateApidocMd = '\
                         tmp.name[0].toUpperCase() + tmp.name.slice(1)
                     ].some(function (name) {
                         tmp.skip = local.path.extname(file) !== '.js' ||
+                            file.indexOf(options.packageJson.main) >= 0 ||
                             new RegExp('(?:\\b|_)(?:archive|artifact|assets|' +
                                 'bin|bower_component|build|' +
                                 'cli|coverage' +

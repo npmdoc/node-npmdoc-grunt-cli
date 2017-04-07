@@ -1,0 +1,24 @@
+<svg height="334" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="334" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">1 megabytes installed</tspan>
+<tspan x="10" y="42"></tspan>
+<tspan x="10" y="58">node_modules</tspan>
+<tspan x="10" y="74">└─┬ grunt-cli@1.2.0 </tspan>
+<tspan x="10" y="90">  ├─┬ findup-sync@0.3.0 </tspan>
+<tspan x="10" y="106">  │ └─┬ glob@5.0.15 </tspan>
+<tspan x="10" y="122">  │   ├─┬ inflight@1.0.6 </tspan>
+<tspan x="10" y="138">  │   │ └── wrappy@1.0.2 </tspan>
+<tspan x="10" y="154">  │   ├── inherits@2.0.3 </tspan>
+<tspan x="10" y="170">  │   ├─┬ minimatch@3.0.3 </tspan>
+<tspan x="10" y="186">  │   │ └─┬ brace-expansion@1.1.7 </tspan>
+<tspan x="10" y="202">  │   │   ├── balanced-match@0.4.2 </tspan>
+<tspan x="10" y="218">  │   │   └── concat-map@0.0.1 </tspan>
+<tspan x="10" y="234">  │   ├── once@1.4.0 </tspan>
+<tspan x="10" y="250">  │   └── path-is-absolute@1.0.1 </tspan>
+<tspan x="10" y="266">  ├── grunt-known-options@1.1.0 </tspan>
+<tspan x="10" y="282">  ├─┬ nopt@3.0.6 </tspan>
+<tspan x="10" y="298">  │ └── abbrev@1.1.0 </tspan>
+<tspan x="10" y="314">  └── resolve@1.1.7</tspan>
+</text>
+</svg>

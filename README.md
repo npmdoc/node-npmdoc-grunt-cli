@@ -1,6 +1,6 @@
 # npmdoc-grunt-cli
 
-#### api documentation for  [grunt-cli (v1.2.0)](https://github.com/gruntjs/grunt-cli#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-cli.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-cli) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-cli.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-cli)
+#### basic api documentation for  [grunt-cli (v1.2.0)](https://github.com/gruntjs/grunt-cli#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-cli.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-cli) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-cli.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-cli)
 
 #### The grunt command line interface
 

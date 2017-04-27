@@ -178,7 +178,23 @@
   console.log(output);
   process.exit(code);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var path = require(&#x27;path&#x27;);
+
+var basedir = process.cwd();
+var gruntpath;
+
+// Do stuff based on CLI options.
+if (&#x27;completion&#x27; in options) {
+  completion.<span class="apidocCodeKeywordSpan">print</span>(options.completion);
+} else if (options.version) {
+  info.version();
+} else if (options.gruntfile) { //Note: if both `gruntfile` and `base` are set, use `gruntfile`
+  basedir = path.resolve(path.dirname(options.gruntfile));
+} else if (options.base) {
+  basedir = path.resolve(options.base);
+}
+...</pre></li>
     </ul>
 
 
@@ -202,7 +218,21 @@
   exports.helpFooter();
   process.exit(code);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  gruntpath = resolve(&#x27;grunt&#x27;, {basedir: basedir});
+} catch (ex) {
+  gruntpath = findup(&#x27;lib/grunt.js&#x27;);
+  // No grunt install found!
+  if (!gruntpath) {
+    if (options.version) { process.exit(); }
+    if (options.help) { info.help(); }
+    info.<span class="apidocCodeKeywordSpan">fatal</span>(&#x27;Unable to find local grunt.&#x27;, 99);
+  }
+}
+
+// Everything looks good. Require local grunt and run it.
+require(gruntpath).cli();
+...</pre></li>
     </ul>
 
 
@@ -219,7 +249,22 @@
   exports.helpFooter();
   process.exit();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+try {
+  gruntpath = resolve(&#x27;grunt&#x27;, {basedir: basedir});
+} catch (ex) {
+  gruntpath = findup(&#x27;lib/grunt.js&#x27;);
+  // No grunt install found!
+  if (!gruntpath) {
+    if (options.version) { process.exit(); }
+    if (options.help) { info.<span class="apidocCodeKeywordSpan">help</span>(); }
+    info.fatal(&#x27;Unable to find local grunt.&#x27;, 99);
+  }
+}
+
+// Everything looks good. Require local grunt and run it.
+require(gruntpath).cli();
+...</pre></li>
     </ul>
 
 
@@ -303,7 +348,23 @@ exports.fatal = function(msg, code) {
     <li>description and source-code<pre class="apidocCodePre">version = function () {
   console.log(&#x27;grunt-cli v&#x27; + pkg.version);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var basedir = process.cwd();
+var gruntpath;
+
+// Do stuff based on CLI options.
+if (&#x27;completion&#x27; in options) {
+  completion.print(options.completion);
+} else if (options.version) {
+  info.<span class="apidocCodeKeywordSpan">version</span>();
+} else if (options.gruntfile) { //Note: if both `gruntfile` and `base` are set, use `gruntfile`
+  basedir = path.resolve(path.dirname(options.gruntfile));
+} else if (options.base) {
+  basedir = path.resolve(options.base);
+}
+
+try {
+...</pre></li>
     </ul>
 
 

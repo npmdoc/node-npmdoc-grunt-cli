@@ -171,7 +171,23 @@
   console.log(output);
   process.exit(code);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var path = require('path');
+
+var basedir = process.cwd();
+var gruntpath;
+
+// Do stuff based on CLI options.
+if ('completion' in options) {
+  completion.<span class="apidocCodeKeywordSpan">print</span>(options.completion);
+} else if (options.version) {
+  info.version();
+} else if (options.gruntfile) { //Note: if both `gruntfile` and `base` are set, use `gruntfile`
+  basedir = path.resolve(path.dirname(options.gruntfile));
+} else if (options.base) {
+  basedir = path.resolve(options.base);
+}
+...</pre></li>
     </ul>
 
 
@@ -195,7 +211,21 @@
   exports.helpFooter();
   process.exit(code);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  gruntpath = resolve('grunt', {basedir: basedir});
+} catch (ex) {
+  gruntpath = findup('lib/grunt.js');
+  // No grunt install found!
+  if (!gruntpath) {
+    if (options.version) { process.exit(); }
+    if (options.help) { info.help(); }
+    info.<span class="apidocCodeKeywordSpan">fatal</span>('Unable to find local grunt.', 99);
+  }
+}
+
+// Everything looks good. Require local grunt and run it.
+require(gruntpath).cli();
+...</pre></li>
     </ul>
 
 
@@ -212,7 +242,22 @@
   exports.helpFooter();
   process.exit();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+try {
+  gruntpath = resolve('grunt', {basedir: basedir});
+} catch (ex) {
+  gruntpath = findup('lib/grunt.js');
+  // No grunt install found!
+  if (!gruntpath) {
+    if (options.version) { process.exit(); }
+    if (options.help) { info.<span class="apidocCodeKeywordSpan">help</span>(); }
+    info.fatal('Unable to find local grunt.', 99);
+  }
+}
+
+// Everything looks good. Require local grunt and run it.
+require(gruntpath).cli();
+...</pre></li>
     </ul>
 
 
@@ -296,7 +341,23 @@ exports.fatal = function(msg, code) {
     <li>description and source-code<pre class="apidocCodePre">version = function () {
   console.log('grunt-cli v' + pkg.version);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var basedir = process.cwd();
+var gruntpath;
+
+// Do stuff based on CLI options.
+if ('completion' in options) {
+  completion.print(options.completion);
+} else if (options.version) {
+  info.<span class="apidocCodeKeywordSpan">version</span>();
+} else if (options.gruntfile) { //Note: if both `gruntfile` and `base` are set, use `gruntfile`
+  basedir = path.resolve(path.dirname(options.gruntfile));
+} else if (options.base) {
+  basedir = path.resolve(options.base);
+}
+
+try {
+...</pre></li>
     </ul>
 
 
